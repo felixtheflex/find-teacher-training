@@ -113,6 +113,11 @@ steps:
     # Format the two different test coverage formats (SimpleCov anf lcov) to code climates json format
     ./cc-test-reporter format-coverage --input-type simplecov --output coverage/rspec.json
     ./cc-test-reporter format-coverage --input-type lcov --output coverage/javascript.json
+    ls -la coverage
+    echo 'rspec coverage'
+    cat coverage/rspec.json
+    echo 'js coverage'
+    cat coverage/javascript.json
 
     # Aggregate the two results to form a single result for our code base
     ./cc-test-reporter sum-coverage --output 'coverage/total.json' coverage/javascript.json coverage/rspec.json
